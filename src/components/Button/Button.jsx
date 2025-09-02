@@ -2,7 +2,7 @@ import React from 'react'
 import { ButtonWrapper } from './Button.styled'
 
 
-const Button = (props) => {
+export const Button = (props) => {
   return (
       <ButtonWrapper {...props}>{props.children}</ButtonWrapper>
   )

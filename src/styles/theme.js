@@ -8,6 +8,7 @@ export const lightTheme = {
 
     red: "#FF2329",
     blue: "#0030f3",
+    sapphireblue: "#2554C7",
     gray: "#808080",
     white: "#FFFFFF",
     black: " #000000",
@@ -44,6 +45,7 @@ export const darkTheme = {
 
     red: "#FF2329",
     blue: "#0030f3",
+    sapphireblue: "#2554C7",
     gray: "#808080",
     white: "#FFFFFF",
     black: " #000000",
