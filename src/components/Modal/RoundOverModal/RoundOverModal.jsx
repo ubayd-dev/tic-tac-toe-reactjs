@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 function RoundOverModal() {
   const { resetBoard, game, restartGame } = useContext(GameContext);
   const { handleModal } = useContext(ModalContext);
-  const { hoverSfx, clickedSfx, completeSfx} = useContext(SfxContexts);
+  const { hoverSfx, clickedSfx } = useContext(SfxContexts);
 
   const navigate = useNavigate();
   return (
@@ -48,11 +48,10 @@ function RoundOverModal() {
           color="#A020F0"
           onClick={() => {
             clickedSfx();
-     
+
             restartGame();
             handleModal();
-                   navigate("/");
-
+            navigate("/");
           }}
           onMouseEnter={() => hoverSfx()}
         >
