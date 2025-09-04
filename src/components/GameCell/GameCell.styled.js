@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 export const CellStyle = styled.button`
-  background-color: ${(props) => props.theme.colors.secondary};
+  background-color: ${(props) =>
+    props.isWinningCell
+      ? props.theme.colors.yellow
+      : props.theme.colors.secondary};
   color: ${(props) => props.theme.colors.primary};
   font-size: 3rem;
   width: 10rem;
@@ -15,7 +18,7 @@ export const CellStyle = styled.button`
   display: flex; /* ✅ centers children */
   align-items: center;
   justify-content: center;
-/* 
+  /* 
 
   ${(props) => props.theme.media.mobile} {
  font-size: 3rem;
@@ -27,7 +30,7 @@ export const CellStyle = styled.button`
 
   } */
 
-/* 
+  /* 
 .o-icon{
    width: 100%;
   height: 100%;
@@ -37,7 +40,6 @@ export const CellStyle = styled.button`
     path {
       fill: ${(props) => props.theme.colors.primary};
     }
-
   }
 
   .outlineIcon {

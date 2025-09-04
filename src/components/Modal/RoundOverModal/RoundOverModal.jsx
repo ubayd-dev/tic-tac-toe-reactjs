@@ -25,10 +25,10 @@ function RoundOverModal() {
       <ModalBody>
         <Subtitle primary>Choices will be switched</Subtitle>
         <Subtitle primary>
-          {game.player1.name}:{game.player1.score}
+          {game.player1.name}:  {game.player1.score}
         </Subtitle>
         <Subtitle primary>
-          {game.player2.name}:{game.player2.score}
+          {game.player2.name}:  {game.player2.score}
         </Subtitle>
       </ModalBody>
       <ModalFooter>

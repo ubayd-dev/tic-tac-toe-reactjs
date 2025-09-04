@@ -10,7 +10,7 @@ import { ReactComponent as OIconOutline } from "../../assets/svgs/icon-o-outline
 import { ModalContext } from "../../contexts/ModalContext";
 import { SfxContexts } from "../../contexts/SfxContexts";
 
-function GameCell({ cellItem, index }) {
+function GameCell({ cellItem, index, isWinningCell }) {
   const { updateBoard, game, roundComplete } = useContext(GameContext);
   const { handleModal } = useContext(ModalContext);
   const { hoverSfx, clickedSfx, winnerSfx, drawSfx } =
@@ -21,7 +21,7 @@ function GameCell({ cellItem, index }) {
     updateBoard(index);
 
     const result = checkForWinner(game.board);
-
+    console.log(result)
     if (result) {
       roundComplete(result);
       if (result !== "draw") {
@@ -29,20 +29,24 @@ function GameCell({ cellItem, index }) {
       } else {
         drawSfx();
       }
-      handleModal(<RoundOverModal />);
+      setTimeout(() => {
+              handleModal(<RoundOverModal />);
+      },2000)
+
+
     }
   };
 
   if (cellItem === "x") {
     return (
-      <CellStyle>
-        <IconX className="markedItem x-icon" />
+      <CellStyle  isWinningCell={isWinningCell?? false}>
+        <IconX className="markedItem x-icon"  />
       </CellStyle>
     );
   } else if (cellItem === "o") {
     return (
-      <CellStyle>
-        <IconO className="markedItem o-icon" />
+      <CellStyle  isWinningCell={isWinningCell?? false}>
+        <IconO className="markedItem o-icon"  />
       </CellStyle>
     );
   }
